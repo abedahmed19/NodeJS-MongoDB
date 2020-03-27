@@ -1,0 +1,638 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/26/2020 12:11:05 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ANDROID"
+  DTS:CreatorName="ANDROID\ABED"
+  DTS:DTSID="{4591D674-C692-4B8A-9D85-D919359C57DD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package3"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{A24DD9B3-672D-435D-A028-E47B962C5FCA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\sqlexpress.AdventureWorks2017]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{720BFCB2-032E-497B-BAAF-9A63702E14A7}"
+      DTS:ObjectName=".\sqlexpress.AdventureWorks2017">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.\sqlexpress;Initial Catalog=AdventureWorks2017;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A02415B1-483E-41AF-A9B4-59FA2834001B}"
+      DTS:ObjectName="Gestionnaire de connexions de fichiers plats">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ABED\Desktop\output\12_AUDIT.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{F437F40B-87C0-481C-91FF-E84F4F354407}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StateProvinceID"
+              DTS:DTSID="{B8532C84-8FA5-4D14-B21A-B460CA642AFC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="64"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nom du package"
+              DTS:DTSID="{4A686491-5145-43F6-8337-95DD197528F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Heure de début d'exécution"
+              DTS:DTSID="{A49CFB64-910C-42CD-BEAF-5D225FDCBBF9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nom de l'ordinateur"
+              DTS:DTSID="{CCE82143-CC92-44CB-882E-9E1298EB1065}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="64"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nom d'utilisateur"
+              DTS:DTSID="{DEFDC1D3-46DD-4752-9CEC-1D95DE4176E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="64"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nom de la tâche"
+              DTS:DTSID="{129CED91-5657-4B34-8E99-F58BD7D514B5}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions Excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{FB1B2EEB-CACF-4B9F-805C-FD0647925F70}"
+      DTS:ObjectName="Gestionnaire de connexions Excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\ABED\Desktop\output\12_AUDIT.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tâche de flux de données"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{C42FAF53-7045-4445-A922-ED3CD8E8B17F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche de flux de données"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tâche de flux de données\Audit"
+              componentClassID="Microsoft.Lineage"
+              contactInfo="Audit;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Inclut des données sur l'environnement dans lequel s'exécute le package. Mappez les variables système à de nouvelles colonnes de sortie. Par exemple, ajoutez le nom de l'ordinateur et de l'opérateur au flux de données."
+              name="Audit">
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Audit.Inputs[Audit entrée 1]"
+                  name="Audit entrée 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1]"
+                  exclusionGroup="1"
+                  name="Audit sortie 1"
+                  synchronousInputId="Package\Tâche de flux de données\Audit.Inputs[Audit entrée 1]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Nom du package]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Nom du package]"
+                      name="Nom du package">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie quel élément d'audit produit cette colonne."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">2</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Heure de début d'exécution]"
+                      dataType="date"
+                      lineageId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Heure de début d'exécution]"
+                      name="Heure de début d'exécution">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie quel élément d'audit produit cette colonne."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">4</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Nom de l'ordinateur]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Nom de l'ordinateur]"
+                      name="Nom de l'ordinateur">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie quel élément d'audit produit cette colonne."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">5</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Nom d'utilisateur]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Nom d'utilisateur]"
+                      name="Nom d'utilisateur">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie quel élément d'audit produit cette colonne."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">6</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Nom de la tâche]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Nom de la tâche]"
+                      name="Nom de la tâche">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie quel élément d'audit produit cette colonne."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">7</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Destination de fichier plat"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destination de fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Destination de fichier plat"
+              localeId="1036"
+              name="Destination de fichier plat"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les données remplaceront ou seront ajoutées au fichier de destination."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Spécifie le texte à enregistrer sur le fichier de destination avant d'enregistrer des données."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Quand le qualificateur de texte est activé, spécifie si le qualificateur de texte dans les données écrites dans le fichier de destination va être échappé ou non."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Destination de fichier plat.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats]"
+                  connectionManagerRefId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat]"
+                  hasSideEffects="true"
+                  name="Entrée de destination de fichier plat">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[City]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[StateProvinceID]"
+                      cachedDataType="i4"
+                      cachedName="StateProvinceID"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[StateProvinceID]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[StateProvinceID]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[Nom du package]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Nom du package"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[Nom du package]"
+                      lineageId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Nom du package]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[Heure de début d'exécution]"
+                      cachedDataType="date"
+                      cachedName="Heure de début d'exécution"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[Heure de début d'exécution]"
+                      lineageId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Heure de début d'exécution]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[Nom de l'ordinateur]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Nom de l'ordinateur"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[Nom de l'ordinateur]"
+                      lineageId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Nom de l'ordinateur]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[Nom d'utilisateur]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Nom d'utilisateur"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[Nom d'utilisateur]"
+                      lineageId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Nom d'utilisateur]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[Nom de la tâche]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Nom de la tâche"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[Nom de la tâche]"
+                      lineageId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1].Columns[Nom de la tâche]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[StateProvinceID]"
+                      dataType="i4"
+                      name="StateProvinceID" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[Nom du package]"
+                      dataType="wstr"
+                      length="64"
+                      name="Nom du package" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[Heure de début d'exécution]"
+                      dataType="date"
+                      name="Heure de début d'exécution" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[Nom de l'ordinateur]"
+                      dataType="wstr"
+                      length="15"
+                      name="Nom de l'ordinateur" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[Nom d'utilisateur]"
+                      dataType="wstr"
+                      length="64"
+                      name="Nom d'utilisateur" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[Nom de la tâche]"
+                      dataType="wstr"
+                      length="64"
+                      name="Nom de la tâche" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Source OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="Source OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[NEWTAB]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Source OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.\sqlexpress.AdventureWorks2017]"
+                  connectionManagerRefId="Package.ConnectionManagers[.\sqlexpress.AdventureWorks2017]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[City]"
+                      length="30"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[StateProvinceID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[StateProvinceID]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[StateProvinceID]"
+                      name="StateProvinceID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[AddressID]"
+                      dataType="i4"
+                      name="AddressID" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[AddressLine1]"
+                      dataType="wstr"
+                      length="60"
+                      name="AddressLine1" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[AddressLine2]"
+                      dataType="wstr"
+                      length="60"
+                      name="AddressLine2" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[StateProvinceID]"
+                      dataType="i4"
+                      name="StateProvinceID" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      name="PostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SpatialLocation]"
+                      dataType="image"
+                      name="SpatialLocation" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[rowguid]"
+                      dataType="guid"
+                      name="rowguid" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[City]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[StateProvinceID]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[StateProvinceID]"
+                      name="StateProvinceID" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tâche de flux de données.Paths[Audit sortie 1]"
+              endId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat]"
+              name="Audit sortie 1"
+              startId="Package\Tâche de flux de données\Audit.Outputs[Audit sortie 1]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de source OLE DB]"
+              endId="Package\Tâche de flux de données\Audit.Inputs[Audit entrée 1]"
+              name="Sortie de source OLE DB"
+              startId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Tâche de flux de données"
+          TopLeft="446,193" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tâche de flux de données">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="103,42"
+          Id="Package\Tâche de flux de données\Audit"
+          TopLeft="529,300" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Tâche de flux de données\Source OLE DB"
+          TopLeft="508,182" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de source OLE DB]"
+          TopLeft="581.75,224">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76"
+              Start="0,0"
+              End="0,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Tâche de flux de données\Destination de fichier plat"
+          TopLeft="467,397" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Audit sortie 1]"
+          TopLeft="580.5,342">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.5,55"
+              Start="0,0"
+              End="-13.5,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="-4,27.5" />
+                  <mssgle:LineSegment
+                    End="-9.5,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.5,27.5"
+                    Point2="-13.5,27.5"
+                    Point3="-13.5,31.5" />
+                  <mssgle:LineSegment
+                    End="-13.5,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

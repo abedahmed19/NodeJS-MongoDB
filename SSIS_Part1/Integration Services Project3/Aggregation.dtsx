@@ -1,0 +1,1111 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/25/2020 11:52:23 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ANDROID"
+  DTS:CreatorName="ANDROID\ABED"
+  DTS:DTSID="{ED1CA11F-4DDC-42E7-9D90-72EA715D5FF5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package3"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{9C00825C-206C-4CF9-AD26-9E9CD6AC09E6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\sqlexpress.AdventureWorks2017]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{56BBB9D9-6150-480E-B436-9A4709D3EAD1}"
+      DTS:ObjectName=".\sqlexpress.AdventureWorks2017">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.\sqlexpress;Initial Catalog=AdventureWorks2017;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{584C3C56-27BD-428E-BDAD-EA803FB2D11E}"
+      DTS:ObjectName="Gestionnaire de connexions de fichiers plats">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ABED\Desktop\output\Aggre.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesOrderID group by"
+              DTS:DTSID="{A9F459DC-6F5F-4910-AD88-2F53C30FFFA5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="count"
+              DTS:DTSID="{EEEE60D8-B196-4402-A579-BED9E2A68C84}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitPrice sum"
+              DTS:DTSID="{1A0C4783-445F-4E41-9B2D-32673888552F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LineTotal count"
+              DTS:DTSID="{5DB7B90E-C8D3-4AF4-B935-4B38AA03AC21}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D4D38A52-8603-4441-A599-CC29E00FFE1D}"
+      DTS:ObjectName="Gestionnaire de connexions de fichiers plats 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ABED\Desktop\output\agg2.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesOrderID group by"
+              DTS:DTSID="{E14359F1-3150-4A2E-AC8D-470CB572F41A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="count"
+              DTS:DTSID="{EFABEC1A-8338-4F4C-AC7D-377B6FAA24C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitPrice sum"
+              DTS:DTSID="{BC435CD3-B64B-4651-AD64-F3AA74379A39}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LineTotal count"
+              DTS:DTSID="{CB4B143F-1E8A-49A7-A036-4FB58BBDD082}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions Excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{5A2C40D5-621B-498D-8F15-F298AE63B6F2}"
+      DTS:ObjectName="Gestionnaire de connexions Excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\ABED\Desktop\output\aggregation.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tâche de flux de données"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{62235702-3B19-4A72-B07D-D5098D58F0A6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche de flux de données"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tâche de flux de données\Agrégation"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Agrégation;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;3"
+              description="Agrège des données avec des fonctions telles que Moyenne, Somme, Nombre, Max.et Min. Par exemple, regroupez des données pour calculer la somme des ventes par produit ou la moyenne des visites par jour."
+              name="Agrégation"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le nombre approximatif de clés GROUP BY produites par l'agrégation. Basse indique 500 000 valeurs de clés, Moyenne indique 5 millions de valeurs de clés et Haute indique plus de 25 millions de valeurs de clés. Non spécifié indique qu'aucune valeur KeyScale n'est utilisée."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Spécifie le nombre exact de clés GROUP BY produites par l'agrégation. Si une valeur KeyScale est spécifiée, la valeur dans Keys est prioritaire."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le nombre approximatif de valeurs distinctes totalisé distinctement par l'agrégation dans une colonne. Basse indique 500 000 valeurs de clés, Moyenne indique 5 millions de valeurs de clés et Haute indique plus de 25 millions de valeurs de clés. Non spécifié indique qu'aucune valeur CountDistinctScale n'est utilisée."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Spécifie le nombre exact de valeurs distinctes totalisées distinctement par l'agrégation dans une colonne. Si une valeur CountDistinctScale est spécifiée, la valeur dans CountDistinctKeys est prioritaire."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage possible d'extension de la mémoire pendant l'agrégation. Les valeurs valides vont de 1 à 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Agrégation.Inputs[Entrée d'agrégation 1]"
+                  name="Entrée d'agrégation 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Agrégation.Inputs[Entrée d'agrégation 1].Columns[SalesOrderID]"
+                      cachedDataType="i4"
+                      cachedName="SalesOrderID"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesOrderID]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Agrégation.Inputs[Entrée d'agrégation 1].Columns[CarrierTrackingNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="CarrierTrackingNumber"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CarrierTrackingNumber]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Agrégation.Inputs[Entrée d'agrégation 1].Columns[LineTotal]"
+                      cachedDataType="numeric"
+                      cachedName="LineTotal"
+                      cachedPrecision="38"
+                      cachedScale="6"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LineTotal]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Agrégation.Inputs[Entrée d'agrégation 1].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Agrégation.Inputs[Entrée d'agrégation 1].Columns[OrderQty]"
+                      cachedDataType="i2"
+                      cachedName="OrderQty"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrderQty]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1]"
+                  name="Sortie d'agrégation 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Spécifie le nombre approximatif de clés GROUP BY produites par l'agrégation. Basse indique 500 000 valeurs de clés, Moyenne indique 5 millions de valeurs de clés et Haute indique plus de 25 millions de valeurs de clés. Non spécifié indique qu'aucune valeur KeyScale n'est utilisée."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Spécifie le nombre exact de clés GROUP BY produites par l'agrégation. Si une valeur KeyScale est spécifiée, la valeur dans Keys est prioritaire."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1].Columns[CarrierTrackingNumber group by]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1].Columns[CarrierTrackingNumber group by]"
+                      name="CarrierTrackingNumber group by">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'ID de la colonne d'entrée utilisé dans l'agrégation."
+                          name="AggregationColumnId">#{Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CarrierTrackingNumber]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie le type d'agrégation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indique si la colonne nécessite un traitement spécial, au cas où elle contiendrait des données dépassant la taille limite ou nécessiterait une précision au-delà du type de données float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison de chaînes."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1].Columns[sum]"
+                      dataType="i8"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1].Columns[sum]"
+                      name="sum">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'ID de la colonne d'entrée utilisé dans l'agrégation."
+                          name="AggregationColumnId">#{Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrderQty]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie le type d'agrégation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indique si la colonne nécessite un traitement spécial, au cas où elle contiendrait des données dépassant la taille limite ou nécessiterait une précision au-delà du type de données float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison de chaînes."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1].Columns[min]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1].Columns[min]"
+                      name="min">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'ID de la colonne d'entrée utilisé dans l'agrégation."
+                          name="AggregationColumnId">#{Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesOrderID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie le type d'agrégation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">6</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indique si la colonne nécessite un traitement spécial, au cas où elle contiendrait des données dépassant la taille limite ou nécessiterait une précision au-delà du type de données float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison de chaînes."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1].Columns[AVG]"
+                      dataType="cy"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1].Columns[AVG]"
+                      name="AVG">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'ID de la colonne d'entrée utilisé dans l'agrégation."
+                          name="AggregationColumnId">#{Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[UnitPrice]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie le type d'agrégation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">5</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indique si la colonne nécessite un traitement spécial, au cas où elle contiendrait des données dépassant la taille limite ou nécessiterait une précision au-delà du type de données float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison de chaînes."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2]"
+                  name="Sortie d'agrégation 2">
+                  <properties>
+                    <property
+                      dataType="System.UInt32"
+                      description="Spécifie le nombre approximatif de clés GROUP BY produites par l'agrégation. Basse indique 500 000 valeurs de clés, Moyenne indique 5 millions de valeurs de clés et Haute indique plus de 25 millions de valeurs de clés. Non spécifié indique qu'aucune valeur KeyScale n'est utilisée."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Spécifie le nombre exact de clés GROUP BY produites par l'agrégation. Si une valeur KeyScale est spécifiée, la valeur dans Keys est prioritaire."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2].Columns[SalesOrderID group by]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2].Columns[SalesOrderID group by]"
+                      name="SalesOrderID group by">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'ID de la colonne d'entrée utilisé dans l'agrégation."
+                          name="AggregationColumnId">#{Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesOrderID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie le type d'agrégation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indique si la colonne nécessite un traitement spécial, au cas où elle contiendrait des données dépassant la taille limite ou nécessiterait une précision au-delà du type de données float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison de chaînes."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2].Columns[count]"
+                      dataType="ui8"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2].Columns[count]"
+                      name="count">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'ID de la colonne d'entrée utilisé dans l'agrégation."
+                          name="AggregationColumnId">#{Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CarrierTrackingNumber]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie le type d'agrégation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indique si la colonne nécessite un traitement spécial, au cas où elle contiendrait des données dépassant la taille limite ou nécessiterait une précision au-delà du type de données float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison de chaînes."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2].Columns[UnitPrice sum]"
+                      dataType="cy"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2].Columns[UnitPrice sum]"
+                      name="UnitPrice sum">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'ID de la colonne d'entrée utilisé dans l'agrégation."
+                          name="AggregationColumnId">#{Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[UnitPrice]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie le type d'agrégation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indique si la colonne nécessite un traitement spécial, au cas où elle contiendrait des données dépassant la taille limite ou nécessiterait une précision au-delà du type de données float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison de chaînes."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2].Columns[LineTotal count]"
+                      dataType="ui8"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2].Columns[LineTotal count]"
+                      name="LineTotal count">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'ID de la colonne d'entrée utilisé dans l'agrégation."
+                          name="AggregationColumnId">#{Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LineTotal]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie le type d'agrégation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indique si la colonne nécessite un traitement spécial, au cas où elle contiendrait des données dépassant la taille limite ou nécessiterait une précision au-delà du type de données float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison de chaînes."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Destination de fichier plat"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destination de fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Destination de fichier plat"
+              localeId="1036"
+              name="Destination de fichier plat"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les données remplaceront ou seront ajoutées au fichier de destination."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Spécifie le texte à enregistrer sur le fichier de destination avant d'enregistrer des données."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Quand le qualificateur de texte est activé, spécifie si le qualificateur de texte dans les données écrites dans le fichier de destination va être échappé ou non."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Destination de fichier plat.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats]"
+                  connectionManagerRefId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat]"
+                  hasSideEffects="true"
+                  name="Entrée de destination de fichier plat">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[CarrierTrackingNumber group by]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="CarrierTrackingNumber group by"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[SalesOrderID group by]"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1].Columns[CarrierTrackingNumber group by]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[sum]"
+                      cachedDataType="i8"
+                      cachedName="sum"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[count]"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1].Columns[sum]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[min]"
+                      cachedDataType="i4"
+                      cachedName="min"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[UnitPrice sum]"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1].Columns[min]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[AVG]"
+                      cachedDataType="cy"
+                      cachedName="AVG"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[LineTotal count]"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1].Columns[AVG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[SalesOrderID group by]"
+                      dataType="i4"
+                      name="SalesOrderID group by" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[count]"
+                      dataType="ui8"
+                      name="count" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[UnitPrice sum]"
+                      dataType="cy"
+                      name="UnitPrice sum" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[LineTotal count]"
+                      dataType="ui8"
+                      name="LineTotal count" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Destination de fichier plat 1"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destination de fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Destination de fichier plat"
+              localeId="1036"
+              name="Destination de fichier plat 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les données remplaceront ou seront ajoutées au fichier de destination."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Spécifie le texte à enregistrer sur le fichier de destination avant d'enregistrer des données."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Quand le qualificateur de texte est activé, spécifie si le qualificateur de texte dans les données écrites dans le fichier de destination va être échappé ou non."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Destination de fichier plat 1.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat]"
+                  hasSideEffects="true"
+                  name="Entrée de destination de fichier plat">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat].Columns[SalesOrderID group by]"
+                      cachedDataType="i4"
+                      cachedName="SalesOrderID group by"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat].ExternalColumns[SalesOrderID group by]"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2].Columns[SalesOrderID group by]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat].Columns[count]"
+                      cachedDataType="ui8"
+                      cachedName="count"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat].ExternalColumns[count]"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2].Columns[count]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat].Columns[UnitPrice sum]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice sum"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat].ExternalColumns[UnitPrice sum]"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2].Columns[UnitPrice sum]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat].Columns[LineTotal count]"
+                      cachedDataType="ui8"
+                      cachedName="LineTotal count"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat].ExternalColumns[LineTotal count]"
+                      lineageId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2].Columns[LineTotal count]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat].ExternalColumns[SalesOrderID group by]"
+                      dataType="i4"
+                      name="SalesOrderID group by" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat].ExternalColumns[count]"
+                      dataType="ui8"
+                      name="count" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat].ExternalColumns[UnitPrice sum]"
+                      dataType="cy"
+                      name="UnitPrice sum" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat].ExternalColumns[LineTotal count]"
+                      dataType="ui8"
+                      name="LineTotal count" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Source OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="Source OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[Sales].[SalesOrderDetail]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Source OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.\sqlexpress.AdventureWorks2017]"
+                  connectionManagerRefId="Package.ConnectionManagers[.\sqlexpress.AdventureWorks2017]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesOrderID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SalesOrderID]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesOrderID]"
+                      name="SalesOrderID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesOrderDetailID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SalesOrderDetailID]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesOrderDetailID]"
+                      name="SalesOrderDetailID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CarrierTrackingNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CarrierTrackingNumber]"
+                      length="25"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CarrierTrackingNumber]"
+                      name="CarrierTrackingNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrderQty]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[OrderQty]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrderQty]"
+                      name="OrderQty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ProductID]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SpecialOfferID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SpecialOfferID]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SpecialOfferID]"
+                      name="SpecialOfferID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[UnitPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[UnitPriceDiscount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[UnitPriceDiscount]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[UnitPriceDiscount]"
+                      name="UnitPriceDiscount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LineTotal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[LineTotal]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LineTotal]"
+                      name="LineTotal"
+                      precision="38"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[rowguid]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[rowguid]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[rowguid]"
+                      name="rowguid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SalesOrderID]"
+                      dataType="i4"
+                      name="SalesOrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SalesOrderDetailID]"
+                      dataType="i4"
+                      name="SalesOrderDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CarrierTrackingNumber]"
+                      dataType="wstr"
+                      length="25"
+                      name="CarrierTrackingNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[OrderQty]"
+                      dataType="i2"
+                      name="OrderQty" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SpecialOfferID]"
+                      dataType="i4"
+                      name="SpecialOfferID" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[UnitPriceDiscount]"
+                      dataType="cy"
+                      name="UnitPriceDiscount" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[LineTotal]"
+                      dataType="numeric"
+                      name="LineTotal"
+                      precision="38"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[rowguid]"
+                      dataType="guid"
+                      name="rowguid" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[SalesOrderID]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[SalesOrderID]"
+                      name="SalesOrderID" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[SalesOrderDetailID]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[SalesOrderDetailID]"
+                      name="SalesOrderDetailID" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CarrierTrackingNumber]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CarrierTrackingNumber]"
+                      name="CarrierTrackingNumber" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[OrderQty]"
+                      dataType="i2"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[OrderQty]"
+                      name="OrderQty" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[SpecialOfferID]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[SpecialOfferID]"
+                      name="SpecialOfferID" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[UnitPriceDiscount]"
+                      dataType="cy"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[UnitPriceDiscount]"
+                      name="UnitPriceDiscount" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[LineTotal]"
+                      dataType="numeric"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[LineTotal]"
+                      name="LineTotal"
+                      precision="38"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[rowguid]"
+                      dataType="guid"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[rowguid]"
+                      name="rowguid" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ModifiedDate]"
+                      name="ModifiedDate" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie d'agrégation 1]"
+              endId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat]"
+              name="Sortie d'agrégation 1"
+              startId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 1]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie d'agrégation 2]"
+              endId="Package\Tâche de flux de données\Destination de fichier plat 1.Inputs[Entrée de destination de fichier plat]"
+              name="Sortie d'agrégation 2"
+              startId="Package\Tâche de flux de données\Agrégation.Outputs[Sortie d'agrégation 2]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de source OLE DB]"
+              endId="Package\Tâche de flux de données\Agrégation.Inputs[Entrée d'agrégation 1]"
+              name="Sortie de source OLE DB"
+              startId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Tâche de flux de données"
+          TopLeft="346,124" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tâche de flux de données">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Tâche de flux de données\Source OLE DB"
+          TopLeft="245,105" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Tâche de flux de données\Agrégation"
+          TopLeft="256,214" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de source OLE DB]"
+          TopLeft="320.5,147">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67"
+              Start="0,0"
+              End="0,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Tâche de flux de données\Destination de fichier plat"
+          TopLeft="198,405" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Tâche de flux de données\Destination de fichier plat 1"
+          TopLeft="574,409" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie d'agrégation 1]"
+          TopLeft="321,256">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23,149"
+              Start="0,0"
+              End="-23,141.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,70.5"
+                    Point2="0,74.5"
+                    Point3="-4,74.5" />
+                  <mssgle:LineSegment
+                    End="-19,74.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19,74.5"
+                    Point2="-23,74.5"
+                    Point3="-23,78.5" />
+                  <mssgle:LineSegment
+                    End="-23,141.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-57.86123046875,79.5,92.7224609375,12.2490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie d'agrégation 2]"
+          TopLeft="341.333333333333,256">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="337.166666666667,153"
+              Start="0,0"
+              End="337.166666666667,145.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.3161094224924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,58.3161094224924"
+                    Point2="0,62.3161094224924"
+                    Point3="4,62.3161094224924" />
+                  <mssgle:LineSegment
+                    End="333.166666666667,62.3161094224924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="333.166666666667,62.3161094224924"
+                    Point2="337.166666666667,62.3161094224924"
+                    Point3="337.166666666667,66.3161094224924" />
+                  <mssgle:LineSegment
+                    End="337.166666666667,145.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="122.036555989583,67.3161094224924,93.0935546875,12.2490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
