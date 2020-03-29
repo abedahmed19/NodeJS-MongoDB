@@ -1,0 +1,222 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/29/2020 8:48:32 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ANDROID"
+  DTS:CreatorName="ANDROID\ABED"
+  DTS:DTSID="{C64785B1-81B6-4003-8573-92AA7E1F8963}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{A6519B67-8220-45F7-8CA4-0F862CA637D0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[books.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{855D7D57-F09A-471A-A8C8-4245DF5416F7}"
+      DTS:ObjectName="books.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\ABED\Documents\sourcesSSIS\books.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[m2.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{D5678350-53CE-4925-82BC-5AC97170B26B}"
+      DTS:ObjectName="m2.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\ABED\Documents\sourcesSSIS\m2.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[m3.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{C5F6F222-7171-4204-993B-7E2EF99E0774}"
+      DTS:ObjectName="m3.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\ABED\Documents\sourcesSSIS\m3.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NodeListOutput.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{2320B9E3-72E8-4940-8099-E432AC3C8112}"
+      DTS:ObjectName="NodeListOutput.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\ABED\Documents\sourcesSSIS\results\NodeListOutput.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ResultsXMLTask]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{EB788AEC-3FB8-4112-905B-FAA1E65A3446}"
+      DTS:ObjectName="ResultsXMLTask">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\ABED\Documents\sourcesSSIS\results\ResultsXMLTask.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ResultsXMLTask.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{4DD14AA2-B753-49CC-8B22-708713602E85}"
+      DTS:ObjectName="ResultsXMLTask.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\ABED\Documents\sourcesSSIS\results\ResultsXMLTask.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[valuesOutputXML.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{8674E885-D60E-4BE1-9AE5-07B7AA91518C}"
+      DTS:ObjectName="valuesOutputXML.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\ABED\Documents\sourcesSSIS\results\valuesOutputXML.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\XML Task"
+      DTS:CreationName="Microsoft.XMLTask"
+      DTS:Description="XML Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{74B2BA7A-77A9-4C60-9E76-1AB53EAA0437}"
+      DTS:ExecutableType="Microsoft.XMLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="XML Task"
+      DTS:TaskContact="XML Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <XMLTaskData
+          OperationType="XPATH"
+          Source="books.xml"
+          SecondOperand="sum(/bookstore/book/price)"
+          SaveOperationResult="True"
+          Destination="ResultsXMLTask.txt"
+          OverwriteDestination="True"
+          PutResultInOneNode="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\XML Task 1"
+      DTS:CreationName="Microsoft.XMLTask"
+      DTS:Description="XML Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{70ADCFF8-567F-4BD3-AA35-A10264C0FA1F}"
+      DTS:ExecutableType="Microsoft.XMLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="XML Task 1"
+      DTS:TaskContact="XML Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <XMLTaskData
+          OperationType="XPATH"
+          Source="books.xml"
+          SecondOperand="/bookstore/book/author"
+          SaveOperationResult="True"
+          Destination="NodeListOutput.txt"
+          XPathOperation="NodeList"
+          PutResultInOneNode="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\XML Task 2"
+      DTS:CreationName="Microsoft.XMLTask"
+      DTS:Description="XML Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{740A021E-6067-4771-BBE1-326E5EDC0E76}"
+      DTS:ExecutableType="Microsoft.XMLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="XML Task 2"
+      DTS:TaskContact="XML Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <XMLTaskData
+          OperationType="XPATH"
+          Source="books.xml"
+          SecondOperand="//book[author=&quot;J K. Rowling&quot;]"
+          SaveOperationResult="True"
+          Destination="valuesOutputXML.txt"
+          OverwriteDestination="True"
+          XPathOperation="Values"
+          PutResultInOneNode="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\XML Task 3"
+      DTS:CreationName="Microsoft.XMLTask"
+      DTS:Description="XML Task"
+      DTS:DTSID="{646CC8A7-13EC-4C86-88FA-525F242A4A10}"
+      DTS:ExecutableType="Microsoft.XMLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="XML Task 3"
+      DTS:TaskContact="XML Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <XMLTaskData
+          OperationType="Merge"
+          Source="books.xml"
+          SecondOperandType="FileConnection"
+          SecondOperand="m2.xml"
+          SaveOperationResult="True"
+          Destination="m3.xml"
+          OverwriteDestination="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="124,42"
+          Id="Package\XML Task"
+          TopLeft="225,93" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\XML Task 1"
+          TopLeft="224,225" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\XML Task 2"
+          TopLeft="236,343" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\XML Task 3"
+          TopLeft="190,457" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
